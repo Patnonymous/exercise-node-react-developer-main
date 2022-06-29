@@ -8,7 +8,7 @@ import path from 'node:path';
 export const repos = Router();
 
 /**
- * @author Silverorange, Patrick W.
+ * @author Silverorange, Anonymous Programmer
  * @description repos GET(/) returns JSON of repository data from an API and local data source. Only returns repos
  * where fork === false.
  */
