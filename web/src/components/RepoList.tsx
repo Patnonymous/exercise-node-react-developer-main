@@ -1,4 +1,5 @@
 import React from 'react';
+import { Repo } from './Repo';
 
 interface AppProps {
   reposArray: JSON[];
@@ -7,7 +8,14 @@ interface AppProps {
 
 export function RepoList(props: AppProps) {
   const reposList = props.reposArray.map((repo: any) => (
-    <li key={repo.id}>{repo.name}</li>
+    <Repo
+      key={repo.id}
+      name={repo.name}
+      description={repo.description}
+      language={repo.language}
+      forksCount={repo.forks_count}
+      debugDate={repo.created_at}
+    />
   ));
 
   if (props.fetchError) {
@@ -22,7 +30,18 @@ export function RepoList(props: AppProps) {
   } else {
     return (
       <div>
-        <ol>{reposList}</ol>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Language</th>
+              <th>Forks Count</th>
+              <th>DEBUG DATE</th>
+            </tr>
+          </thead>
+          <tbody>{reposList}</tbody>
+        </table>
       </div>
     );
   }
