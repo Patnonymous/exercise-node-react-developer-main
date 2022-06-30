@@ -15,9 +15,16 @@ export function App() {
     fetchRepos()
       .then((repoData) => {
         console.log(repoData);
-        setRepos(repoData);
+        repoData.sort((a: any, b: any) => {
+          return (
+            new Date(a.created_at).getTime() - new Date(b.created_at).getTime()
+          );
+        });
+        console.log(repoData);
+        setRepos(repoData.reverse());
       })
       .catch((err) => {
+        console.log(err);
         setFetchErr(true);
       });
   }, []);
