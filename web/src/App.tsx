@@ -1,25 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
+import { RepoList } from './components/RepoList';
 
-import './App.css';
+const fetchRepos = async () => {
+  const res = await fetch('http://localhost:4000/repos');
+  const reposJson = await res.json();
+  return reposJson;
+};
 
 export function App() {
+  const [repos, setRepos] = React.useState([]);
+  const [fetchErr, setFetchErr] = React.useState(false);
+
+  React.useEffect(() => {
+    fetchRepos()
+      .then((repoData) => {
+        console.log(repoData);
+        setRepos(repoData);
+      })
+      .catch((err) => {
+        setFetchErr(true);
+      });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Silverorange Repos</h1>
+      <RepoList fetchError={fetchErr} reposArray={repos} />
     </div>
   );
 }
