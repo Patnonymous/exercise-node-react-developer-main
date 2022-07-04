@@ -8,6 +8,7 @@
     "start_windows": "ts-node-dev -- ./src/index.ts",
     "test": "node -e \"console.log('No tests yet!')\"",
     "lint": "eslint 'src/**/*.{js,ts}'",
+    "lint_alt": "eslint \"**/*.{ts,tsx}\"",
     "prettier": "prettier --list-different 'src/**/*.{js,ts}'",
     "prettier-write": "prettier --write 'src/**/*.{js,ts}'"
   },
