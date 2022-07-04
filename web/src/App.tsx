@@ -38,7 +38,7 @@ export function App() {
         // Reverse when doing setRepos.
         repoData.sort((a: any, b: any) => {
           return (
-            new Date(a.created_at).getTime() - new Date(b.created_at).getTime()
+            new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
           );
         });
 

@@ -21,7 +21,7 @@ export function RepoList(props: AppProps) {
       name={repo.name}
       description={repo.description}
       language={repo.language}
-      forksCount={repo.forks_count}
+      forksCount={repo.forksCount}
     />
   ));
 
