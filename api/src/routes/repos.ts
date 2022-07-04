@@ -50,6 +50,5 @@ repos.get('/', async (_: Request, res: Response) => {
   };
 
   res.status(200);
-
   res.json(reposData);
 });

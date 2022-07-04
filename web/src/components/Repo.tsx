@@ -8,6 +8,12 @@ interface AppProps {
   debugDate: string;
 }
 
+/**
+ * @author Anonymous
+ * @description Repo component displays the specified data for each repo.
+ * @param props Props containing repo data.
+ * @returns Jsx.
+ */
 export function Repo(props: AppProps) {
   return (
     <tr>
