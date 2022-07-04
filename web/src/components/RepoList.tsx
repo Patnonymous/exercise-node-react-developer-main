@@ -6,6 +6,14 @@ interface AppProps {
   fetchError: boolean;
 }
 
+/**
+ * @author Anonymous
+ * @description This component maps the array of repositories to the Repo
+ * component and displays them.
+ * If an error occurs, an error message is displayed instead.
+ * @param props Props containing reposArray and error status.
+ * @returns Jsx.
+ */
 export function RepoList(props: AppProps) {
   const reposList = props.reposArray.map((repo: any) => (
     <Repo
@@ -36,7 +44,6 @@ export function RepoList(props: AppProps) {
               <th>Description</th>
               <th>Language</th>
               <th>Forks Count</th>
-              <th>DEBUG DATE</th>
             </tr>
           </thead>
           <tbody>{reposList}</tbody>
