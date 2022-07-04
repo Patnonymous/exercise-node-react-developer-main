@@ -14,7 +14,6 @@ export function RepoList(props: AppProps) {
       description={repo.description}
       language={repo.language}
       forksCount={repo.forks_count}
-      debugDate={repo.created_at}
     />
   ));
 

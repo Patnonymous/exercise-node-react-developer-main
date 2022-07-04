@@ -5,7 +5,6 @@ interface AppProps {
   description: string;
   language: string;
   forksCount: number;
-  debugDate: string;
 }
 
 /**
@@ -21,7 +20,6 @@ export function Repo(props: AppProps) {
       <td>{props.description}</td>
       <td>{props.language}</td>
       <td>{props.forksCount}</td>
-      <td>{props.debugDate}</td>
     </tr>
   );
 }
