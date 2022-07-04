@@ -14,6 +14,12 @@ const fetchRepos = async () => {
   return reposJson;
 };
 
+/**
+ * @author Anonymous
+ * @description Fetches repos from the api, sort, filters, and gets the Languages used,
+ * then displays using relevant components.
+ * @returns Jsx.
+ */
 export function App() {
   // Init state.
   const [repos, setRepos] = React.useState([]);
